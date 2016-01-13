@@ -32,7 +32,7 @@ public class CedictLoader {
 			String line;
 			int i = 0;
 			try (BufferedReader br = new BufferedReader(
-					new InputStreamReader(new FileInputStream("./classes/cedict_ts.u8"), "UTF8"))) {
+					new InputStreamReader(new FileInputStream("./src/main/resources/cedict_ts.u8"), "UTF8"))) {
 				// new InputStreamReader(new
 				// FileInputStream("./src/main/resources/cedict_ts.u8"),
 				// "UTF8"))) {
