@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cedict</title>
+<link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+	<h2>Cedict</h2>
+	Word En count: <span th:text="${wordEnCount}"></span> 
+	Word Zh count: <span th:text="${wordZhCount}"></span>
+</body>
+</html>

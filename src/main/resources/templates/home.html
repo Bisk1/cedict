@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cedict</title>
+<link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+	<h2>Cedict</h2>
+	New Chinese word:
+	<form action="wordzh" method="POST">
+		<label for="text">Text:</label> 
+		<input type="text" name="text"></input><br /> 
+		<label for="pinyin">Pinyin:</label> 
+		<input type="text" name="pinyin"></input><br /> 
+		<input type="submit"></input>
+	</form>
+	New English word:
+	<form action="worden" method="POST">
+		<label for="text">Text:</label> 
+		<input type="text" name="text"></input><br /> 
+		<input type="submit"></input>
+	</form>
+	New translation:
+	<form action="translation" method="POST">
+		<label for="wordentext">English text:</label> 
+		<input type="text" name="wordentext"></input><br /> 
+		<label for="wordzhtext">Chinese text:</label> 
+		<input type="text" name="wordzhtext"></input><br /> 
+		<label for="wordzhpinyin">Pinyin:</label> 
+		<input type="text" name="wordzhpinyin"></input><br /> 
+		<input type="submit"></input>
+	</form>
+	Chinese words:
+	<ul th:each="word : ${wordZhs}">
+		<li>Word: <span th:text="${word.text}"></span> 
+			Pinyin: <span th:text="${word.pinyin}"></span></li>
+		<li>Translations:
+			<ul th:each="translation : ${word.translations}">
+				<li>Word: <span th:text="${translation.text}">Word</span></li>
+			</ul>
+		</li>
+	</ul>
+	English words:
+	<ul th:each="word : ${wordEns}">
+		<li>Word: <span th:text="${word.text}">Word</span></li>
+		<li>Translations:
+			<ul th:each="translation : ${word.translations}">
+				<li>Word: <span th:text="${translation.text}"></span>
+					Pinyin: <span th:text="${translation.pinyin}"></span></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
