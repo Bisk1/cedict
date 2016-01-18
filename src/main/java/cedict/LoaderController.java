@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import cedict.service.CedictLoader;
 
-//@Controller
+//@Controller uncomment to expose method to load new dictionary
 class LoaderController {
 	private CedictLoader cedictLoader;
 
