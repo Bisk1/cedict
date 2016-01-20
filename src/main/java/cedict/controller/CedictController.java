@@ -1,4 +1,4 @@
-package cedict;
+package cedict.controller;
 
 import java.util.Map;
 

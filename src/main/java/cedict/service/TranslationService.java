@@ -1,7 +1,6 @@
 package cedict.service;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,9 +38,9 @@ public class TranslationService {
 	}
 
 	private WordEn findOrCreateWordEn(String text) {
-		Optional<WordEn> wordEnFromDb = wordEnRepository.findByText(text);
-		if (wordEnFromDb.isPresent()) {
-			return wordEnFromDb.get();
+		WordEn wordEnFromDb = wordEnRepository.findByText(text);
+		if (wordEnFromDb != null) {
+			return wordEnFromDb;
 		} else {
 			WordEn wordEn = new WordEn();
 			wordEn.setText(text);
@@ -51,9 +50,9 @@ public class TranslationService {
 	}
 
 	private WordZh findOrCreateWordZh(String text, String pinyin) {
-		Optional<WordZh> wordZhFromDb = wordZhRepository.findByTextAndPinyin(text, pinyin);
-		if (wordZhFromDb.isPresent()) {
-			return wordZhFromDb.get();
+		WordZh wordZhFromDb = wordZhRepository.findByTextAndPinyin(text, pinyin);
+		if (wordZhFromDb != null) {
+			return wordZhFromDb;
 		} else {
 			WordZh wordZh = new WordZh();
 			wordZh.setText(text);
