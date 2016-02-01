@@ -3,10 +3,10 @@ package cedict.service;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,9 +33,6 @@ public class CedictLoader {
 			int i = 0;
 			try (BufferedReader br = new BufferedReader(
 					new InputStreamReader(new FileInputStream("./src/main/resources/cedict_ts.u8"), "UTF8"))) {
-				// new InputStreamReader(new
-				// FileInputStream("./src/main/resources/cedict_ts.u8"),
-				// "UTF8"))) {
 				while ((line = br.readLine()) != null) {
 					processLine(line);
 					log.info(Integer.toString(i++));
