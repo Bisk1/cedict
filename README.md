@@ -21,6 +21,7 @@ Info:
 - The application code contains controller used for populating the database (`LoaderController`), but it is commented out (annotation) for safety
 - data is exposed through REST API
 - only simplified Chinese is supported
+- numeric pinyin is replaced by diacritics (tone markers over the letters)
 
 ## API:
 
@@ -34,14 +35,14 @@ Returns list of all possible Chinese words (pairs of characters + pinyin) matchi
 
 Request:
 
-https://cedict.herokuapp.com/api/zh/好/hao4 GET
+https://cedict.herokuapp.com/api/zh/好 GET
 
 Response:
 
 ```json
 [
     {
-        "pinyin": "hao3",
+        "pinyin": "hǎo",
         "text": "好",
         "translations": [
             "good",
@@ -57,7 +58,7 @@ Response:
         ]
     },
     {
-        "pinyin": "hao4",
+        "pinyin": "hào",
         "text": "好",
         "translations": [
             "to be fond of",
@@ -81,13 +82,13 @@ Returns Chinese word and associated translations (characters + pinyin) matching 
 
 Request:
 
-https://cedict.herokuapp.com/api/zh/好/hao4 GET
+https://cedict.herokuapp.com/api/zh/好/hào GET
 
 Response:
 
 ```json
 {
-    "pinyin": "hao4",
+    "pinyin": "hào",
     "text": "好",
     "translations": [
         "to be fond of",
@@ -119,19 +120,19 @@ Response:
     "translations": [
         [
             "欧",
-            "Ou1"
+            "Ōu"
         ],
         [
             "欧洲",
-            "Ou1 zhou1"
+            "Ōu zhōu"
         ],
         [
             "欧罗巴",
-            "Ou1 luo2 ba1"
+            "Ōu luó bā"
         ],
         [
             "欧罗巴洲",
-            "Ou1 luo2 ba1 Zhou1"
+            "Ōu luó bā Zhōu"
         ]
     ]
 }
