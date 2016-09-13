@@ -1,4 +1,4 @@
-# CC-CEDICT as a complete microservice
+# CC-CEDICT as a service
 
 Demo:
 https://cedict.herokuapp.com/
